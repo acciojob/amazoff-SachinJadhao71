@@ -20,15 +20,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
 
 
+    @Autowired
+    OrderService orderService;
     @PostMapping("/add-order")
     public ResponseEntity<String> addOrder(@RequestBody Order order){
-
+        Order o = orderService.addOrder(order);
+        if(o==null){
+            return new ResponseEntity<>("Oder Id Already Exists",HttpStatus.ALREADY_REPORTED);
+        }
         return new ResponseEntity<>("New order added successfully", HttpStatus.CREATED);
     }
 
     @PostMapping("/add-partner/{partnerId}")
     public ResponseEntity<String> addPartner(@PathVariable String partnerId){
-
+        String s = orderService.addpartner(partnerId);
         return new ResponseEntity<>("New delivery partner added successfully", HttpStatus.CREATED);
     }
 
