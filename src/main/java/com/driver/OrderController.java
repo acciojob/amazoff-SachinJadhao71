@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("orders")
 public class OrderController {
 
-
+// autowired accessing the bean which is created by spring
     @Autowired
     OrderService orderService;
     @PostMapping("/add-order")
