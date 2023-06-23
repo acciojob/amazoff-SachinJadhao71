@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
 
 // autowired accessing the bean which is created by spring
-    @Autowired
-    OrderService orderService;
+//    @Autowired
+    OrderService orderService = new OrderService();
     @PostMapping("/add-order")
     public ResponseEntity<String> addOrder(@RequestBody Order order){
        orderService.addOrder(order);
