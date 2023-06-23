@@ -9,12 +9,16 @@ import java.util.List;
 @Repository
 public class OrderRepository {
 
+//    this map mapping order with order Id
     HashMap<String,Order> orderDb = new HashMap<>();
 
+//    this map for partner and partner Id
     HashMap<String,DeliveryPartner> partnerDb = new HashMap<>();
 
+//    this map is for pair of partner and order pairs
     HashMap<String, String> orderPartnerDb = new HashMap<>();
 
+//    this map for partner Id and all order that partner carrying
     HashMap<String, List<String>> partnerOrderDb = new HashMap<>();
 
     public void addOrder(Order order){
