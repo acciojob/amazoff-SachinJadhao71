@@ -86,7 +86,7 @@ public class OrderRepository {
         List<String> orders = partnerOrderDb.get(partnerId);
 
         for(String orderId : orders){
-            int deliveryTime = orderDb.get(partnerId).getDeliveryTime();
+            int deliveryTime = orderDb.get(orderId).getDeliveryTime();
             if(deliveryTime > time){
                 count++;
             }
